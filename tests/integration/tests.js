@@ -15,6 +15,8 @@ describe('calculator functionality', function() {
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   });
+  
+  
   // Do the number buttons update the display of the running total ?
   it('should update the display of the running total', function(){
     let running_total = element(by.css('#running_total'))
@@ -24,6 +26,8 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('7')
     });
+  
+  
 // Do the arithmetical operations update the display with the result of the operation ?
   it('should have arthmetical operations that update the display with result of the operation', function () {
     let running_total = element(by.css('#running_total'))
@@ -34,8 +38,7 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('20')
 });
 
-
-
+  
 // Can multiple operations be chained together ?
   it('should chain multiple operations together', function () {
     let running_total = element(by.css('#running_total'))
@@ -59,6 +62,7 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('125')
   });
+  
 
   it('should output as expected for a range of numbers decimal', function () {
     let running_total = element(by.css('#running_total'))
@@ -68,8 +72,9 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('4.5')
   });
+  
 
-    it('should output as expected for a range of numbers negative', function () {
+  it('should output as expected for a range of numbers negative', function () {
       let running_total = element(by.css('#running_total'))
       element(by.css('#number1')).click();
       element(by.css('#operator_subtract')).click();
@@ -78,7 +83,7 @@ describe('calculator functionality', function() {
       expect(running_total.getAttribute('value')).to.eventually.equal('-2')
     });
 
-    it('should output as expected for a range of numbers positive', function () {
+  it('should output as expected for a range of numbers positive', function () {
       let running_total = element(by.css('#running_total'))
       element(by.css('#operator_subtract')).click();
       element(by.css('#number0')).click();
@@ -87,6 +92,7 @@ describe('calculator functionality', function() {
       element(by.css('#operator_equals')).click();
       expect(running_total.getAttribute('value')).to.eventually.equal('8')
     });
+  
 
 // What does the code do in exceptional circumstances ? Specifically, if you divide by zero, what is the effect ? Write a test to describe what you’d prefer to happen, and then correct the code to make that test pass(you will need to modify the Calculator model to meet this requirement).
   it('what does the code do in exceptional circumstances', function () {
